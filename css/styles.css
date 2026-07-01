@@ -6,7 +6,7 @@
   --text: #f8fafc;
   --text-muted: #94a3b8;
   --primary: #6366f1;
-  --primary-hover: #4f46e5;
+  --primary-hover: #818cf8;
   --success: #22c55e;
   --danger: #ef4444;
   --warning: #f59e0b;
@@ -45,23 +45,6 @@ button {
   color-scheme: dark;
 }
 
-/* Элегантные анимации */
-@keyframes softFadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes premiumFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-
 /* Layout */
 .app-layout {
   display: flex;
@@ -95,7 +78,7 @@ button {
 .sidebar-logo-icon {
   width: 36px;
   height: 36px;
-  background: rgba(99, 102, 241, 0.1);
+  background: rgba(99, 102, 241, 0.2);
   color: var(--primary);
   border-radius: 10px;
   display: flex;
@@ -118,7 +101,7 @@ button {
   padding: 0.625rem 0.75rem;
   border-radius: var(--radius);
   color: var(--text-muted);
-  transition: background 0.2s ease, color 0.2s ease;
+  transition: background 0.15s, color 0.15s;
 }
 
 .nav-link:hover {
@@ -127,8 +110,8 @@ button {
 }
 
 .nav-link.active {
-  background: rgba(99, 102, 241, 0.12);
-  color: var(--primary);
+  background: rgba(99, 102, 241, 0.15);
+  color: var(--primary-hover);
 }
 
 .main-content {
@@ -181,7 +164,7 @@ button {
   margin-bottom: 1.5rem;
 }
 
-/* Landing (Обновленный премиальный стиль) */
+/* Landing */
 .landing {
   min-height: 100vh;
   display: flex;
@@ -190,51 +173,31 @@ button {
   justify-content: center;
   text-align: center;
   padding: 2rem;
-  background: linear-gradient(180deg, #131c31 0%, #0f172a 100%);
 }
 
 .landing-icon {
-  width: 72px;
-  height: 72px;
-  background: var(--surface);
-  border: 1px solid var(--border);
+  width: 64px;
+  height: 64px;
+  background: rgba(99, 102, 241, 0.2);
+  color: var(--primary);
   border-radius: var(--radius-lg);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.25rem;
-  margin-bottom: 1.75rem;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
-  
-  /* Анимация плавного покачивания */
-  animation: softFadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards,
-             premiumFloat 4s ease-in-out infinite 0.8s;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .landing h1 {
-  font-size: 2.75rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
-  
-  /* Матовый благородный градиент на тексте без неона */
-  background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  
-  opacity: 0;
-  animation: softFadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
 }
 
 .landing p {
   color: var(--text-muted);
-  max-width: 520px;
-  margin-bottom: 2.5rem;
-  font-size: 1.125rem;
-  line-height: 1.6;
-  
-  opacity: 0;
-  animation: softFadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+  max-width: 480px;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
 }
 
 .landing-actions {
@@ -242,9 +205,6 @@ button {
   gap: 1rem;
   flex-wrap: wrap;
   justify-content: center;
-  
-  opacity: 0;
-  animation: softFadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
 }
 
 /* Components */
@@ -268,7 +228,7 @@ button {
 
 .card-value.income { color: var(--success); }
 .card-value.expense { color: var(--danger); }
-.card-value.balance { color: #818cf8; }
+.card-value.balance { color: var(--primary-hover); }
 
 .grid {
   display: grid;
@@ -298,15 +258,15 @@ button {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   color: var(--text);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color 0.15s, box-shadow 0.15s;
 }
 
 .input:focus,
 .select:focus,
 .textarea:focus {
   outline: none;
-  border-color: #4f46e5;
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
 }
 
 .textarea {
@@ -314,21 +274,17 @@ button {
   min-height: 80px;
 }
 
-/* Кнопки с приятным физическим откликом */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
+  padding: 0.625rem 1.25rem;
   border: none;
   border-radius: var(--radius);
   font-weight: 500;
-  font-size: 0.95rem;
   cursor: pointer;
-  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), 
-              background 0.2s ease, 
-              box-shadow 0.2s ease;
+  transition: background 0.15s, opacity 0.15s;
 }
 
 .btn:disabled {
@@ -336,44 +292,32 @@ button {
   cursor: not-allowed;
 }
 
-.btn:hover:not(:disabled) {
-  transform: translateY(-2px); /* Плавное приподнимание */
-}
-
-.btn:active:not(:disabled) {
-  transform: translateY(0); /* Физический клик */
-}
-
 .btn-primary {
   background: var(--primary);
   color: white;
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
 }
 
 .btn-primary:hover:not(:disabled) {
   background: var(--primary-hover);
-  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.3);
 }
 
 .btn-secondary {
   background: var(--surface);
   color: var(--text);
   border: 1px solid var(--border);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .btn-secondary:hover:not(:disabled) {
   background: var(--surface-hover);
-  border-color: #475569;
 }
 
 .btn-danger {
-  background: rgba(239, 68, 68, 0.1);
+  background: rgba(239, 68, 68, 0.15);
   color: var(--danger);
 }
 
 .btn-danger:hover:not(:disabled) {
-  background: rgba(239, 68, 68, 0.2);
+  background: rgba(239, 68, 68, 0.25);
 }
 
 .btn-sm {
@@ -393,21 +337,21 @@ button {
 }
 
 .alert-error {
-  background: rgba(239, 68, 68, 0.06);
+  background: rgba(239, 68, 68, 0.1);
   color: var(--danger);
-  border: 1px solid rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.2);
 }
 
 .alert-success {
-  background: rgba(34, 197, 94, 0.06);
+  background: rgba(34, 197, 94, 0.1);
   color: var(--success);
-  border: 1px solid rgba(34, 197, 94, 0.15);
+  border: 1px solid rgba(34, 197, 94, 0.2);
 }
 
 .alert-info {
-  background: rgba(99, 102, 241, 0.06);
-  color: #818cf8;
-  border: 1px solid rgba(99, 102, 241, 0.15);
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--primary-hover);
+  border: 1px solid rgba(99, 102, 241, 0.2);
 }
 
 .auth-footer {
@@ -418,7 +362,7 @@ button {
 }
 
 .auth-footer a {
-  color: #818cf8;
+  color: var(--primary-hover);
 }
 
 .auth-footer a:hover {
@@ -451,7 +395,7 @@ th {
 }
 
 tr:hover td {
-  background: rgba(255, 255, 255, 0.01);
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .badge {
@@ -463,12 +407,12 @@ tr:hover td {
 }
 
 .badge-income {
-  background: rgba(34, 197, 94, 0.1);
+  background: rgba(34, 197, 94, 0.15);
   color: var(--success);
 }
 
 .badge-expense {
-  background: rgba(239, 68, 68, 0.1);
+  background: rgba(239, 68, 68, 0.15);
   color: var(--danger);
 }
 
@@ -517,8 +461,7 @@ tr:hover td {
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(15, 23, 42, 0.75);
-  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -537,7 +480,7 @@ tr:hover td {
   padding: 1.5rem;
   width: 100%;
   max-width: 480px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow);
 }
 
 .modal h2 {
@@ -601,7 +544,6 @@ tr:hover td {
   }
 
   .landing h1 {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
 }
-
