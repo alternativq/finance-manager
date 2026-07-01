@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Настройки — Менеджер финансов</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main-content">
+      <header class="page-header">
+        <h1>Настройки</h1>
+        <p>Экспорт, импорт и резервное копирование</p>
+      </header>
+
+      <div id="alert"></div>
+
+      <section class="grid grid-2 section">
+        <div class="card">
+          <h2 style="margin-bottom:0.5rem">Экспорт</h2>
+          <p style="color:var(--text-muted);margin-bottom:1rem;font-size:0.875rem">
+            Скачать все данные в JSON-файл на компьютер.
+          </p>
+          <button class="btn btn-primary" id="export-btn">Экспортировать JSON</button>
+        </div>
+        <div class="card">
+          <h2 style="margin-bottom:0.5rem">Импорт</h2>
+          <p style="color:var(--text-muted);margin-bottom:1rem;font-size:0.875rem">
+            Загрузить транзакции из ранее экспортированного файла.
+          </p>
+          <input type="file" id="import-file" accept=".json" class="input">
+        </div>
+        <div class="card">
+          <h2 style="margin-bottom:0.5rem">Облачная копия</h2>
+          <p style="color:var(--text-muted);margin-bottom:1rem;font-size:0.875rem">
+            Сохранить резервную копию в Supabase (таблица backups).
+          </p>
+          <button class="btn btn-secondary" id="backup-btn">Создать резервную копию</button>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="js/config.js"></script>
+  <script type="module" src="js/settings.js"></script>
+</body>
+</html>

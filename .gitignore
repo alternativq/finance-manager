@@ -1,0 +1,15 @@
+# dependencies — нет, проект без Node.js
+
+# env / secrets
+js/config.js
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# empty src from old Next.js attempt
+src/

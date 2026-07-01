@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вход — Менеджер финансов</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main class="auth-page">
+    <div class="auth-card">
+      <h1>Вход</h1>
+      <p class="subtitle">Войдите в свой аккаунт</p>
+      <div id="alert"></div>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input class="input" type="email" id="email" name="email" required autocomplete="email">
+        </div>
+        <div class="form-group">
+          <label for="password">Пароль</label>
+          <input class="input" type="password" id="password" name="password" required autocomplete="current-password">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Войти</button>
+      </form>
+      <p class="auth-footer">Нет аккаунта? <a href="register.html">Зарегистрироваться</a></p>
+    </div>
+  </main>
+  <script src="js/config.js"></script>
+  <script type="module" src="js/login.js"></script>
+</body>
+</html>
